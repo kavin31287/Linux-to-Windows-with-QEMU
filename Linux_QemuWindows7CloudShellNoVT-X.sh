@@ -1,8 +1,8 @@
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 unzip -o ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 clear
-read -p "Paste authtoken here (Copy and Ctrl+V to paste then press Enter): " CRP
-./ngrok authtoken $CRP 
+
+./ngrok authtoken 
 nohup ./ngrok tcp 5900 &>/dev/null &
 echo Please wait for installing...
 wget https://transfer.sh/1H19mpR/1.zip > /dev/null 2>&1
@@ -20,4 +20,4 @@ echo "Note: Use Right-Click To Copy"
 echo "Please Keep Cloud Shell Tab Open"
 echo Script by fb.com/thuong.hai.581
 cpu=$(echo nproc | bash)
-./dist/proot -S . qemu-system-x86_64 -vnc :0 -hda lite7.qcow2  -smp cores=$cpu  -m 3072M -machine usb=on -device usb-tablet > /dev/null 2>&1
+./dist/proot -S . qemu-system-x86_64 -vnc :0 -hda lite7.qcow2  -smp cores=$cpu  -m 1024M -machine usb=on -device usb-tablet > /dev/null 2>&1
